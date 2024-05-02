@@ -32,28 +32,21 @@ should probably proofread and complete it, then remove this comment. -->
 
 # Whisper Small Ro - IAzari
 
-This model is a fine-tuned version of [openai/whisper-small](https://huggingface.co/openai/whisper-small) on the Common Voice 11.0 Ro dataset.
-It achieves the following results on the evaluation set:
-- Loss: 0.2959
-- Wer: 20.8078
+Modelul dat este o ajustare a modelului [openai/whisper-small](https://huggingface.co/openai/whisper-small) cu datele Common Voice  11.0 Ro.
+Rezultate:
+- Pierderi: 0.2959
+- (RCG) Rata Cuvintelor Greșite: 20.8078
 
-## Model description
+## Descrierea
 
-More information needed
+Este un model intenționat pentru transcrierea graiului Moldovenesc în text.
 
-## Intended uses & limitations
-
-More information needed
-
-## Training and evaluation data
-
-More information needed
 
 ## Training procedure
 
-### Training hyperparameters
+### Hiperparametrii de antrenare
 
-The following hyperparameters were used during training:
+Hiperparametri utilizați la antrenare:
 - learning_rate: 1e-05
 - train_batch_size: 16
 - eval_batch_size: 8
@@ -64,15 +57,15 @@ The following hyperparameters were used during training:
 - training_steps: 1000
 - mixed_precision_training: Native AMP
 
-### Training results
+### Rezultate de antrenare
 
-| Training Loss | Epoch | Step | Validation Loss | Wer     |
-|:-------------:|:-----:|:----:|:---------------:|:-------:|
-| 0.0562        | 2.99  | 500  | 0.2754          | 21.7093 |
-| 0.0056        | 5.99  | 1000 | 0.2959          | 20.8078 |
+| Pierderi în antrenare | Epoci | Pași | Pierderi în validare | RCG     |
+|:---------------------:|:-----:|:----:|:--------------------:|:-------:|
+| 0.0562                | 2.99  | 500  | 0.2754               | 21.7093 |
+| 0.0056                | 5.99  | 1000 | 0.2959               | 20.8078 |
 
 
-### Framework versions
+### Versiunile cadrului
 
 - Transformers 4.39.3
 - Pytorch 2.2.1+cu121
