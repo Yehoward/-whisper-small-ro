@@ -2,9 +2,9 @@
 language:
 - ro
 license: apache-2.0
-base_model: openai/whisper-small
 tags:
 - generated_from_trainer
+base_model: openai/whisper-small
 datasets:
 - mozilla-foundation/common_voice_11_0
 metrics:
@@ -13,8 +13,8 @@ model-index:
 - name: Whisper Small Ro - IAzari
   results:
   - task:
-      name: Automatic Speech Recognition
       type: automatic-speech-recognition
+      name: Automatic Speech Recognition
     dataset:
       name: Common Voice 11.0 Ro
       type: mozilla-foundation/common_voice_11_0
@@ -22,9 +22,9 @@ model-index:
       split: None
       args: 'config: ro, split: test'
     metrics:
-    - name: Wer
-      type: wer
+    - type: wer
       value: 20.807789397764154
+      name: Wer
 ---
 
 <!-- This model card has been generated automatically according to the information the Trainer had access to. You
