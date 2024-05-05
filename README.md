@@ -2,72 +2,76 @@
 language:
 - ro
 license: apache-2.0
+base_model: openai/whisper-small
 tags:
 - generated_from_trainer
-base_model: openai/whisper-small
 datasets:
-- mozilla-foundation/common_voice_11_0
+- Yehoward/iazar-date
 metrics:
 - wer
 model-index:
-- name: Whisper Small Ro - IAzari
+- name: Whisper Small Ro_MD - IAzar
   results:
   - task:
-      type: automatic-speech-recognition
       name: Automatic Speech Recognition
+      type: automatic-speech-recognition
     dataset:
-      name: Common Voice 11.0 Ro
-      type: mozilla-foundation/common_voice_11_0
-      config: ro
-      split: None
-      args: 'config: ro, split: test'
+      name: "Date colectate \xEEn cadrul proiectului TekWil"
+      type: Yehoward/iazar-date
+      args: 'split: test'
     metrics:
-    - type: wer
-      value: 20.807789397764154
-      name: Wer
+    - name: Wer
+      type: wer
+      value: 47.46987951807229
 ---
 
 <!-- This model card has been generated automatically according to the information the Trainer had access to. You
 should probably proofread and complete it, then remove this comment. -->
 
-# Whisper Small Ro - IAzari
+# Whisper Small Ro_MD - IAzar
 
-Modelul dat este o ajustare a modelului [openai/whisper-small](https://huggingface.co/openai/whisper-small) cu datele Common Voice  11.0 Ro.
-Rezultate:
-- Pierderi: 0.2959
-- (RCG) Rata Cuvintelor Greșite: 20.8078
+This model is a fine-tuned version of [openai/whisper-small](https://huggingface.co/openai/whisper-small) on the Date colectate în cadrul proiectului TekWil dataset.
+It achieves the following results on the evaluation set:
+- Loss: 0.7998
+- Wer: 47.4699
 
-## Descrierea
+## Model description
 
-Este un model intenționat pentru transcrierea graiului Moldovenesc în text.
+More information needed
 
+## Intended uses & limitations
+
+More information needed
+
+## Training and evaluation data
+
+More information needed
 
 ## Training procedure
 
-### Hiperparametrii de antrenare
+### Training hyperparameters
 
-Hiperparametri utilizați la antrenare:
+The following hyperparameters were used during training:
 - learning_rate: 1e-05
 - train_batch_size: 16
 - eval_batch_size: 8
 - seed: 42
 - optimizer: Adam with betas=(0.9,0.999) and epsilon=1e-08
 - lr_scheduler_type: linear
-- lr_scheduler_warmup_steps: 200
-- training_steps: 1000
+- lr_scheduler_warmup_steps: 50
+- training_steps: 200
 - mixed_precision_training: Native AMP
 
-### Rezultate de antrenare
+### Training results
 
-| Pierderi în antrenare | Epoci | Pași | Pierderi în validare | RCG     |
-|:---------------------:|:-----:|:----:|:--------------------:|:-------:|
-| 0.0562                | 2.99  | 500  | 0.2754               | 21.7093 |
-| 0.0056                | 5.99  | 1000 | 0.2959               | 20.8078 |
+| Training Loss | Epoch   | Step | Validation Loss | Wer     |
+|:-------------:|:-------:|:----:|:---------------:|:-------:|
+| 0.0006        | 66.6667 | 200  | 0.7998          | 47.4699 |
 
 
-### Versiunile cadrului
+### Framework versions
 
-- Transformers 4.39.3
+- Transformers 4.40.1
 - Pytorch 2.2.1+cu121
-- Datasets 2.18.0
-- Tokenizers 0.15.2
+- Datasets 2.19.0
+- Tokenizers 0.19.1
