@@ -30,28 +30,54 @@ should probably proofread and complete it, then remove this comment. -->
 
 # Whisper Small Ro - Iazar
 
-This model is a fine-tuned version of [openai/whisper-small](https://huggingface.co/openai/whisper-small) on the Date audio colectate în cadrul proiectului TekWil dataset.
-It achieves the following results on the evaluation set:
-- Loss: 0.8207
+O adjustare a modelului [openai/whisper-small](https://huggingface.co/openai/whisper-small) pe Date audio colectate în cadrul proiectului TekWill.
+Obține următoarele rezultate pe setul de evaluare:
+- Pierdere: 0,8207
 - Wer: 46.2651
 
-## Model description
+## Descriere
 
-More information needed
+Este un model intenționat pentru transcrierea graiului Moldovenesc în text.
 
-## Intended uses & limitations
+## Datele
 
-More information needed
+Pentru antrenarea modelului s-au folosit atît date de la [Common Voice](https://huggingface.co/datasets/mozilla-foundation/common_voice_11_0), cît și [date colectate în cadrul proiectului](https://github.com/Yehoward/iazar-datacollector).
 
-## Training and evaluation data
+## Performanță
 
-More information needed
+![audioul transcris](./pub/tg-2024-05-04T21:48:19.wav)
 
-## Training procedure
+Am făcut niște testări pe mai multe modele, ca să observăm dacă există un oarecare progres.
 
-### Training hyperparameters
 
-The following hyperparameters were used during training:
+![whisper small ro](./pub/evaluare-whisper-small.png)
+Transcriere de către modelul preantrenat de la Whisper.
+
+![whisper small ro](./pub/evaluare-common-voice.png)
+Transcriere de către modelul antrenat numai cu date de la Common Voice.
+
+![whisper small ro](./pub/evaluare-iazar.png)
+Transcriere de către modelul antrenat numai cu datele colectate în cadrul proiectului.
+
+![whisper small ro](./pub/evaluare-common-voice-iazar.png)
+Transcrierea de către modelul antrenat atît cu date de la Common Voice, cît și cu date colectate în cadrul proiectului.
+
+
+
+
+
+
+## Procedura de antrenament
+
+### Codul de antrenare 
+
+Am folosit google colab pentru antrenarea modelului.
+
+mai multe detalii -> https://github.com/Yehoward/Iazar?tab=readme-ov-file#code_de_antrenare_iazaripynb
+
+### Hiperparametri de antrenament
+
+Următorii hiperparametri au fost utilizați în timpul antrenamentului:
 - learning_rate: 1e-05
 - train_batch_size: 16
 - eval_batch_size: 8
@@ -62,14 +88,14 @@ The following hyperparameters were used during training:
 - training_steps: 200
 - mixed_precision_training: Native AMP
 
-### Training results
+### Rezultate antrenament
 
-| Training Loss | Epoch   | Step | Validation Loss | Wer     |
+| Pierdere la antrenament | Epocă | Pasul | Pierdere de validare | Rata de erori a cuvintelor |
 |:-------------:|:-------:|:----:|:---------------:|:-------:|
 | 0.0005        | 66.6667 | 200  | 0.8207          | 46.2651 |
 
 
-### Framework versions
+### Versiuni cadre
 
 - Transformers 4.40.1
 - Pytorch 2.2.1+cu121
