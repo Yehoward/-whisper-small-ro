@@ -45,7 +45,7 @@ Pentru antrenarea modelului s-au folosit atît date de la [Common Voice](https:/
 
 ## Performanță
 
-![audioul transcris](./pub/test-audio.mp3)
+![audioul transcris](./pub/test-audio.mp4)
 
 Am făcut niște testări pe mai multe modele, ca să observăm dacă există un oarecare progres.
 
