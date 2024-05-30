@@ -7,6 +7,7 @@ tags:
 - generated_from_trainer
 datasets:
 - Yehoward/iazar-date
+- mozilla-foundation/common_voice_11_0
 metrics:
 - wer
 model-index:
@@ -16,7 +17,7 @@ model-index:
       name: Automatic Speech Recognition
       type: automatic-speech-recognition
     dataset:
-      name: "Date audio colectate \xEEn cadrul proiectului TekWil"
+      name: Date audio colectate în cadrul proiectului TekWil
       type: Yehoward/iazar-date
       args: 'split: test'
     metrics:
